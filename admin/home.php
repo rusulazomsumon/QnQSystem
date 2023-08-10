@@ -15,10 +15,17 @@
             <span class="info-box-icon bg-gradient-navy elevation-1"><i class="fas fa-table"></i></span>
 
             <div class="info-box-content">
-            <span class="info-box-text">Active Account Groups</span>
+            <span class="info-box-text">Current Balance</span>
             <span class="info-box-number text-right">
-                <?php 
+                <!-- <?php 
                     echo $conn->query("SELECT * FROM `group_list` where delete_flag = 0 and status = 1 ")->num_rows;
+                ?> -->
+                <!-- show total ammount -->
+                <?php 
+                    $result = $conn->query("SELECT SUM(CASE WHEN is_credit = 0 THEN -amount ELSE amount END) AS total_amount FROM khata")->fetch_assoc();
+                    $totalAmount = $result['total_amount'];
+                    
+                    echo "$totalAmount";
                 ?>
             </span>
             </div>
@@ -31,10 +38,13 @@
             <span class="info-box-icon bg-gradient-primary elevation-1"><i class="fas fa-th-list"></i></span>
 
             <div class="info-box-content">
-            <span class="info-box-text">Active Accounts</span>
+            <span class="info-box-text">Total Earning</span>
             <span class="info-box-number text-right">
                 <?php 
-                    echo $conn->query("SELECT * FROM `account_list` where delete_flag= 0 and status = 1 ")->num_rows;
+                    $totalCredit = $conn->query("SELECT SUM(amount) AS total_credit FROM khata WHERE is_credit = 1")->fetch_assoc()['total_credit'];
+
+                    echo "$totalCredit";
+                    
                 ?>
             </span>
             </div>
@@ -47,10 +57,13 @@
             <span class="info-box-icon bg-gradient-info elevation-1"><i class="fas fa-pen-square"></i></span>
 
             <div class="info-box-content">
-            <span class="info-box-text">Journal Entries</span>
+            <span class="info-box-text">Total Expense</span>
             <span class="info-box-number text-right">
                 <?php 
-                    echo $conn->query("SELECT * FROM `journal_entries` ")->num_rows;
+                    $totalCredit = $conn->query("SELECT SUM(amount) AS total_credit FROM khata WHERE is_credit = 0")->fetch_assoc()['total_credit'];
+
+                    echo "$totalCredit";
+                    
                 ?>
             </span>
             </div>
