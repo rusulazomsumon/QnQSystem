@@ -40,14 +40,14 @@
         </div>
     </div>
 </div>
-<div class="row ">
+<div class="row mt-3">
     <!-- statictics chart here -->
     <div class="col-12 col-sm-12 col-md-6 col-lg-3">
         <?php require_once('reports/statistics.php') ?>
     </div>
     <div class="col-12 col-sm-12 col-md-6 col-lg-3">
         <div class="info-box bg-gradient-light shadow">
-            <span class="info-box-icon bg-gradient-navy elevation-1"><i class="fas fa-table"></i></span>
+            <span class="info-box-icon bg-gradient-navy elevation-1"><i class="far fa-money-bill-alt"></i></span>
 
             <div class="info-box-content">
             <span class="info-box-text">Current Balance</span>
@@ -70,7 +70,7 @@
     </div>
     <div class="col-12 col-sm-12 col-md-6 col-lg-3">
         <div class="info-box bg-gradient-light shadow">
-            <span class="info-box-icon bg-gradient-primary elevation-1"><i class="fas fa-th-list"></i></span>
+            <span class="info-box-icon bg-gradient-primary elevation-1"><i class="fas fa-arrow-up"></i></span>
 
             <div class="info-box-content">
             <span class="info-box-text">Total Earning</span>
@@ -89,7 +89,7 @@
     </div>
     <div class="col-12 col-sm-12 col-md-6 col-lg-3">
         <div class="info-box bg-gradient-light shadow">
-            <span class="info-box-icon bg-gradient-info elevation-1"><i class="fas fa-pen-square"></i></span>
+            <span class="info-box-icon bg-gradient-info elevation-1"><i class="fas fa-arrow-down"></i></span>
 
             <div class="info-box-content">
             <span class="info-box-text">Total Expense</span>
@@ -149,7 +149,7 @@
                 ?>
             </tbody>
         </table>
-        <button class="btn btn-info btn-lg btn-block" href="https://example.com/demo">See All Report</button>
+        <!-- <button class="btn btn-info btn-lg btn-block" href="https://example.com/demo">See All Report</button> -->
     </div>
 </div>
 
