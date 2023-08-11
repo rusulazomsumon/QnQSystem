@@ -61,4 +61,7 @@
     </script>
     <script src="<?php echo base_url ?>dist/js/script.js"></script>
 
+    <!-- for chart -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
   </head>

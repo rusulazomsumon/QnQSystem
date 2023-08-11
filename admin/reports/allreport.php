@@ -11,6 +11,7 @@
                 <thead>
                     <tr>
                         <th>SL</th>
+                        <th>Time</th>
                         <th>Stakeholder</th>
                         <th>Description</th>
                         <th>Amount</th>
@@ -24,7 +25,7 @@
                         FROM khata
                         LEFT JOIN users ON khata.u_id = users.id
                         LEFT JOIN source ON khata.Issue = source.Id
-                        ORDER BY khata.Id DESC";
+                        ORDER BY khata.Id DESC LIMIT 20";
                                 $result = $conn->query($query);
 
                                 $serial = 1;
@@ -33,6 +34,7 @@
                                     $rowClass = $serial % 2 == 0 ? 'table-info' : 'table-primary';
                                     echo "<tr class=\"$rowClass\">";
                                     echo "<td>{$serial}</td>";
+                                    echo "<td>{$row['entry_time_date']}</td>";
                                     echo "<td>{$row['username']}</td>";
                                     echo "<td>{$row['description']}</td>";
                                     echo "<td>{$row['amount']}</td>";
