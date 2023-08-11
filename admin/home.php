@@ -72,9 +72,49 @@
         <!-- /.info-box -->
     </div>
 </div>
-<hr class="border-border bg-primary">
+<hr class="border-border bg-warning">
+<!-- last 6 transiction details -->
 <div class="row">
     <div class="col-md-12">
-        <img src="<?= validate_image($_settings->info('cover')) ?>" alt="Website Page" id="banner-img" class="w-100">
+        <table class="table bg-warning">
+            <thead>
+                <tr>
+                    <th>SL</th>
+                    <th>Stakeholder</th>
+                    <th>Description</th>
+                    <th>Amount</th>
+                    <th>Issue</th>
+                    <th>Types</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php
+                $query = "SELECT khata.*, users.username, source.title AS issue_title
+                          FROM khata
+                          LEFT JOIN users ON khata.u_id = users.id
+                          LEFT JOIN source ON khata.Issue = source.Id
+                          ORDER BY khata.Id DESC LIMIT 5";
+
+                $result = $conn->query($query);
+
+                $serial = 1;
+                while ($row = $result->fetch_assoc()) {
+                    $creditDebit = $row['is_credit'] == 1 ? 'Credit' : 'Debit';
+                    $rowClass = $serial % 2 == 0 ? 'table-info' : 'table-primary';
+                    echo "<tr class=\"$rowClass\">";
+                    echo "<td>{$serial}</td>";
+                    echo "<td>{$row['username']}</td>";
+                    echo "<td>{$row['description']}</td>";
+                    echo "<td>{$row['amount']}</td>";
+                    echo "<td>{$row['issue_title']}</td>";
+                    echo "<td>{$creditDebit}</td>";
+                    echo "</tr>";
+                    $serial++;
+                }
+                ?>
+            </tbody>
+        </table>
     </div>
 </div>
+
+
