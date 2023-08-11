@@ -32,31 +32,50 @@
                       </a>
                     </li>
                     <li class="nav-item">
-                      <a href="<?php echo base_url ?>admin/?page=journals" class="nav-link text-light nav-journals">
+                      <a href="<?php echo base_url ?>admin/?page=expence" class="nav-link text-light nav-journals">
                         <i class="nav-icon fas fa-book"></i>
                         <p>
-                          Journal Entries
+                          Add Expence
                         </p>
                       </a>
                     </li>
+
+                    <!-- Report Menus -->
                     <li class="nav-header">Report</li>
                     <li class="nav-item">
-                      <a href="<?php echo base_url ?>admin/?page=reports/working_trial_balance" class="nav-link text-light nav-reports_working_trial_balance">
+                      <a href="<?php echo base_url ?>admin/?page=reports/allreport" class="nav-link text-light nav-reports_working_trial_balance">
                         <i class="nav-icon fas fa-file"></i>
                         <p>
-                          Working Trial Balance
+                          All Report
                         </p>
                       </a>
                     </li>
                     <li class="nav-item">
-                      <a href="<?php echo base_url ?>admin/?page=reports/trial_balance" class="nav-link text-light nav-reports_trial_balance">
+                      <a href="<?php echo base_url ?>admin/?page=reports/statistics" class="nav-link text-light nav-reports_trial_balance">
                         <i class="nav-icon fas fa-file"></i>
                         <p>
-                          Trial Balance
+                         Statistics 
                         </p>
                       </a>
                     </li>
+
+                    <!-- Configure Menus -->
+                    <li class="nav-header">Configure</li>
+                    <li class="nav-item">
+                      <a href="<?php echo base_url ?>admin/?page=reports/issue" class="nav-link text-light nav-reports_working_trial_balance">
+                        <i class="nav-icon fas fa-info"></i>
+                        <p>
+                          Add Issue
+                        </p>
+                      </a>
+                    </li>
+                    
+
+                    <!-- Super Admin Area -->
+
                     <?php if($_settings->userdata('type') == 1): ?>
+                    <!-- type, 1 = admin, 2 = user -->
+
                     <li class="nav-header">Maintenance</li>
                     <li class="nav-item dropdown">
                       <a href="<?php echo base_url ?>admin/?page=groups" class="nav-link text-light nav-groups">

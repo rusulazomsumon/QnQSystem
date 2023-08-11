@@ -6,8 +6,7 @@
         object-position:center center;
     }
 </style>
-<!-- <h1>Welcome to <?php echo $_settings->info('name') ?> </h1> -->
-<h1>Welcome to Q&Q System </h1>
+<h1>Welcome to <?php echo $_settings->info('name') ?> </h1>
 <hr class="border-border bg-primary">
 <div class="row">
     <div class="col-12 col-sm-12 col-md-6 col-lg-4">
@@ -114,6 +113,7 @@
                 ?>
             </tbody>
         </table>
+        <button class="btn btn-info btn-lg btn-block" href="https://example.com/demo">See All Report</button>
     </div>
 </div>
 
