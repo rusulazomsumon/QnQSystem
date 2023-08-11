@@ -1,7 +1,45 @@
+<style>
+    .scroll-message {
+    height: 50px;
+    overflow: hidden;
+    position: relative;
+    background: #337ab7;
+    color: #fff;
+    border: 1px solid #fff;
+}
+
+.scroll-message p {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    line-height: 50px;
+    text-align: center;
+    /* Starting position */
+    transform:translateX(100%);
+    /* Apply animation to this element */
+    animation: scroll-message 20s linear infinite;
+}
+
+/* Move it (define the animation) */
+@keyframes scroll-message {
+    0% { transform: translateX(100%); }
+    100% { transform: translateX(-100%); }
+}
+</style>
 
 <!-- <h1>Welcome to <?php echo $_settings->info('name') ?> </h1> -->
 <!-- <hr class="border-border bg-primary"> -->
-
+<!-- Notice Board / short massage -->
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="scroll-message bg-primary text-white">
+                <p><?php echo $_settings->info('short_msg') ?></p>
+            </div>
+        </div>
+    </div>
+</div>
 <div class="row ">
     <!-- statictics chart here -->
     <div class="col-12 col-sm-12 col-md-6 col-lg-3">

@@ -38,6 +38,10 @@
 				<input type="text" class="form-control form-control-sm" name="short_name" id="short_name" value="<?php echo  $_settings->info('short_name') ?>">
 			</div>
 			<div class="form-group">
+				<label for="short_name" class="control-label">Admin Massage</label>
+				<input type="text" class="form-control form-control-sm" name="short_msg" id="short_msg" value="<?php echo  $_settings->info('short_msg') ?>">
+			</div>
+			<div class="form-group">
 				<label for="" class="control-label">System Logo</label>
 				<div class="custom-file">
 	              <input type="file" class="custom-file-input rounded-circle" id="customFile" name="img" onchange="displayImg(this,$(this))">

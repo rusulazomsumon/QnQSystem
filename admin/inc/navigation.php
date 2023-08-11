@@ -60,16 +60,15 @@
                     </li>
 
                     <!-- Configure Menus -->
-                    <li class="nav-header">Configure</li>
+                    <li class="nav-header">Issue(উৎস)</li>
                     <li class="nav-item">
-                      <a href="<?php echo base_url ?>admin/?page=reports/issue" class="nav-link text-light nav-reports_working_trial_balance">
-                        <i class="nav-icon fas fa-info"></i>
+                      <a href="<?php echo base_url ?>admin/?page=issue/add_issue" class="nav-link text-light nav-reports_working_trial_balance">
+                        <i class="nav-icon fas fa-plus"></i>
                         <p>
                           Add Issue
                         </p>
                       </a>
-                    </li>
-                    
+                    </li> 
 
                     <!-- Super Admin Area -->
 
