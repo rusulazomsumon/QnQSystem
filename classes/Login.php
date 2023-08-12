@@ -76,7 +76,7 @@ class Login extends DBConnection {
 	}
 	public function client_logout(){
 		if($this->settings->sess_des()){
-			redirect('./');
+			redirect('.');
 		}
 	}
 }

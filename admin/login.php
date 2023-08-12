@@ -12,12 +12,18 @@
       width:calc(100%) !important;
     }
     body{
-      background-image: url("<?php echo validate_image($_settings->info('cover')) ?>");
+      background-image: url("https://img.freepik.com/free-vector/tiny-tailors-creating-outfit-apparel-sewing-machine-flat-vector-illustration-cartoon-women-men-working-with-mannequin_74855-8636.jpg?w=2000");
       background-size:cover;
       background-repeat:no-repeat;
     }
     .login-title{
-      text-shadow: 2px 2px black
+      text-shadow: 2px 2px black;
+    }
+    .login-title a{
+      color: white;
+      font-size: 48px;
+      text-decoration: none;
+
     }
     #login{
       flex-direction:column !important
@@ -37,8 +43,9 @@
   <div class="h-100 d-flex align-items-center w-100" id="login">
     <div class="col-7 h-100 d-flex align-items-center justify-content-center">
       <div class="w-100">
-        <center><img src="<?= validate_image($_settings->info('logo')) ?>" alt="" id="logo-img"></center>
-        <h1 class="text-center py-5 login-title"><b><?php echo $_settings->info('name') ?></b></h1>
+        <!-- <center><img src="<?= validate_image($_settings->info('logo')) ?>" alt="" id="logo-img"></center> -->
+        <!-- title name -->
+        <h3 class="text-center login-title"><b><a href="../"><?php echo $_settings->info('name') ?></a></b></h3>
       </div>
       
     </div>
@@ -68,7 +75,7 @@
               </div>
               <div class="row">
                 <div class="col-8">
-                  <!-- <a href="<?php echo base_url ?>" class="text-navy">Go to Website</a> -->
+                  <a href="<?php echo base_url ?>" class="text-navy">Visit Website</a>
                 </div>
                 <!-- /.col -->
                 <div class="col-4">
