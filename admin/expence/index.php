@@ -53,14 +53,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     ?>
                 </select>
             </div>
-            <div class="form-group">
-                <label for="description">Description:</label>
-                <input type="text" class="form-control" name="description" required>
-            </div>
-            <div class="form-group">
-                <label for="amount">Amount:</label>
-                <input type="number" class="form-control" name="amount" required>
-            </div>
+            <!-- issue -->
             <div class="form-group">
                 <label for="issue">Issue:</label>
                 <select class="form-control" name="issue">
@@ -74,6 +67,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     }
                     ?>
                 </select>
+            </div>
+            <!-- description -->
+            <div class="form-group">
+                <label for="description">Description:</label>
+                <input type="text" class="form-control" name="description" required>
+            </div>
+            <div class="form-group">
+                <label for="amount">Amount:</label>
+                <input type="number" class="form-control" name="amount" required>
             </div>
             <div class="form-group">
                 <label for="is_credit">Expence Type:</label> <br>
