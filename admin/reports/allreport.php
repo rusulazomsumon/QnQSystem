@@ -10,13 +10,14 @@
             <table class="table bg-warning">
                 <thead>
                     <tr>
-                        <th>SL</th>
+                        <th>IN</th>
                         <th>Time</th>
                         <th>Stakeholder</th>
                         <th>Description</th>
                         <th>Amount</th>
                         <th>Issue</th>
                         <th>Types</th>
+                        <th>Attachment</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -26,29 +27,39 @@
                         LEFT JOIN users ON khata.u_id = users.id
                         LEFT JOIN source ON khata.Issue = source.Id
                         ORDER BY khata.Id DESC LIMIT 100";
-                                $result = $conn->query($query);
+                        $result = $conn->query($query);
 
-                                $serial = 1;
-                                while ($row = $result->fetch_assoc()) {
-                                    $creditDebit = $row['is_credit'] == 1 ? 'Credit' : 'Debit';
-                                    $rowClass = $serial % 2 == 0 ? 'table-info' : 'table-primary';
-                                    echo "<tr class=\"$rowClass\">";
-                                    echo "<td>{$serial}</td>";
-                                    echo "<td>{$row['entry_time_date']}</td>";
-                                    echo "<td>{$row['username']}</td>";
-                                    echo "<td>{$row['description']}</td>";
-                                    echo "<td>{$row['amount']}</td>";
-                                    echo "<td>{$row['issue_title']}</td>";
-                                    echo "<td>{$creditDebit}</td>";
-                                    echo "</tr>";
-                                    $serial++;
-                                }
+                        $serial = 1;
+                        while ($row = $result->fetch_assoc()) {
+                            $creditDebit = $row['is_credit'] == 1 ? 'Credit' : 'Debit';
+                            $rowClass = $serial % 2 == 0 ? 'table-info' : 'table-primary';
+                            echo "<tr class=\"$rowClass\">";
+                            echo "<td>{$row['Id']}</td>";
+                            echo "<td>{$row['entry_time_date']}</td>";
+                            echo "<td>{$row['username']}</td>";
+                            echo "<td>{$row['description']}</td>";
+                            echo "<td>{$row['amount']}</td>";
+                            echo "<td>{$row['issue_title']}</td>";
+                            echo "<td>{$creditDebit}</td>";
+                            echo "<td>";
+if ($row['attach']) {
+    $attachmentPath = str_replace('\\', '/', str_replace($_SERVER['DOCUMENT_ROOT'], '', $row['attach']));
+    $attachmentUrl = '/ajms/media/' . basename($attachmentPath); // Corrected path
+    echo "<a href='{$attachmentUrl}' target='_blank' rel='noopener noreferrer'><img src='{$attachmentUrl}' width='50' height='50'></a>";
+}
+echo "</td>";
+                            echo "</td>";
+                            echo "</td>";
+                            echo "</tr>";
+                            $serial++;
+                        }
                     ?>
                 </tbody>
             </table>
         </div>
     </div>
 </div>
+
 
 <!-- Include Bootstrap JS and jQuery -->
 <!-- from header -->
