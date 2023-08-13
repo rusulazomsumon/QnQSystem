@@ -36,6 +36,7 @@ include('../inc/topBarNav.php');
                     echo '<table class="table">';
                     echo '<thead>';
                     echo '<tr>';
+                    echo '<th>IN</th>';
                     echo '<th>Date</th>';
                     echo '<th>Issue</th>';
                     echo '<th>Amount</th>';
@@ -46,6 +47,7 @@ include('../inc/topBarNav.php');
 
                     while ($row = mysqli_fetch_assoc($resultTransactions)) {
                         echo '<tr>';
+                        echo '<td>' . $row['Id'] . '</td>';
                         echo '<td>' . $row['entry_time_date'] . '</td>';
                         echo '<td>' . $row['issue_title'] . '</td>';
                         echo '<td>' . $row['amount'] . '</td>';
