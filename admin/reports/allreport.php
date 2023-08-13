@@ -25,7 +25,7 @@
                         FROM khata
                         LEFT JOIN users ON khata.u_id = users.id
                         LEFT JOIN source ON khata.Issue = source.Id
-                        ORDER BY khata.Id DESC LIMIT 20";
+                        ORDER BY khata.Id DESC LIMIT 100";
                                 $result = $conn->query($query);
 
                                 $serial = 1;

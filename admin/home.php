@@ -43,7 +43,7 @@
 <div class="row mt-3">
     <!-- statictics chart here -->
     <div class="col-12 col-sm-12 col-md-6 col-lg-3">
-        <?php require_once('reports/statistics.php') ?>
+        <?php require_once('reports/chart.php') ?>
     </div>
     <div class="col-12 col-sm-12 col-md-6 col-lg-3">
         <div class="info-box bg-gradient-light shadow">
