@@ -59,8 +59,6 @@ echo "</td>";
         </div>
     </div>
 </div>
-
-
 <!-- Include Bootstrap JS and jQuery -->
 <!-- from header -->
 
